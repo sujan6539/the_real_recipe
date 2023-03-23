@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:the_real_receipe/main.dart';
+import 'package:the_real_recipe/main.dart';
 
 import '../styles/colors.dart';
 

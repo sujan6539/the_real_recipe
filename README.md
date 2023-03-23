@@ -1,4 +1,4 @@
-# the_real_receipe
+# the_real_recipe
 
 A new Flutter project.
 

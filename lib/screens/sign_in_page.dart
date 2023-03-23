@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:the_real_receipe/main.dart';
-import 'package:the_real_receipe/presentation/ui/edit_text.dart';
+import 'package:the_real_recipe/main.dart';
+import 'package:the_real_recipe/presentation/ui/edit_text.dart';
 
 class SignInPage extends StatelessWidget {
   const SignInPage({Key? key}) : super(key: key);

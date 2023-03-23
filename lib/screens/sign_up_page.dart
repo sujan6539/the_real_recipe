@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:the_real_receipe/presentation/styles/colors.dart';
-import 'package:the_real_receipe/presentation/ui/edit_text.dart';
+import 'package:the_real_recipe/presentation/styles/colors.dart';
+import 'package:the_real_recipe/presentation/ui/edit_text.dart';
 
 import '../main.dart';
 import '../presentation/ui/check_box.dart';

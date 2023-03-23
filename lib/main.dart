@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:the_real_receipe/presentation/styles/colors.dart';
-import 'package:the_real_receipe/presentation/styles/styles.dart';
-import 'package:the_real_receipe/screens/home_page.dart';
-import 'package:the_real_receipe/screens/sign_in_page.dart';
-import 'package:the_real_receipe/screens/sign_up_page.dart';
+import 'package:the_real_recipe/presentation/styles/colors.dart';
+import 'package:the_real_recipe/presentation/styles/styles.dart';
+import 'package:the_real_recipe/screens/home_page.dart';
+import 'package:the_real_recipe/screens/sign_in_page.dart';
+import 'package:the_real_recipe/screens/sign_up_page.dart';
 
 void main() {
   runApp(const MyApp());

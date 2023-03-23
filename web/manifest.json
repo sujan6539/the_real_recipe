@@ -1,6 +1,6 @@
 {
-    "name": "the_real_receipe",
-    "short_name": "the_real_receipe",
+    "name": "the_real_recipe",
+    "short_name": "the_real_recipe",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

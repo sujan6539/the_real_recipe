@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:the_real_receipe/main.dart';
-import 'package:the_real_receipe/presentation/ui/hero_card.dart';
-import 'package:the_real_receipe/presentation/ui/review_card.dart';
+import 'package:the_real_recipe/main.dart';
+import 'package:the_real_recipe/presentation/ui/hero_card.dart';
+import 'package:the_real_recipe/presentation/ui/review_card.dart';
 
 import '../presentation/ui/home_greeting.dart';
 

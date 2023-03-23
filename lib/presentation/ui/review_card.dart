@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:the_real_receipe/main.dart';
-import 'package:the_real_receipe/presentation/styles/colors.dart';
+import 'package:the_real_recipe/main.dart';
+import 'package:the_real_recipe/presentation/styles/colors.dart';
 
 class ReviewCard extends StatelessWidget {
   const ReviewCard({Key? key}) : super(key: key);

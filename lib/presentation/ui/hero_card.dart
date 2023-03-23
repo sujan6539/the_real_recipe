@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:the_real_receipe/main.dart';
-import 'package:the_real_receipe/presentation/styles/colors.dart';
+import 'package:the_real_recipe/main.dart';
+import 'package:the_real_recipe/presentation/styles/colors.dart';
 
 class HeroCard extends StatelessWidget {
   const HeroCard({Key? key}) : super(key: key);

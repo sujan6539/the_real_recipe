@@ -1,13 +1,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.tsuzan.the_real_receipe">
+    package="com.tsuzan.the_real_recipe">
     <uses-permission android:name="android.permission.INTERNET"/>
    <application
-        android:label="the_real_receipe"
+        android:label="the_real_recipe"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
        
         <activity
-            android:name=".MainActivity"
+            android:name="com.tsuzan.the_real_recipe.MainActivity"
             android:exported="true"
             android:launchMode="singleTop"
             android:theme="@style/LaunchTheme"
