@@ -7,6 +7,7 @@ class Dimens {
   Dimens(this._scale);
 
   late final double dimens_4 = 4 * _scale;
+  late final double dimens_6 = 6 * _scale;
   late final double dimens_8 = 8 * _scale;
   late final double dimens_12 = 12 * _scale;
   late final double dimens_16 = 16 * _scale;

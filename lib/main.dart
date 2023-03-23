@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:the_real_receipe/presentation/styles/colors.dart';
 import 'package:the_real_receipe/presentation/styles/styles.dart';
 import 'package:the_real_receipe/screens/sign_in_page.dart';
+import 'package:the_real_receipe/screens/sign_up_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: AppColors().toThemeData(context),
-      home: SafeArea(child: Scaffold(body: SignInPage())),
+      home: SafeArea(child: Scaffold(body: SignUpPage())),
     );
   }
 }
