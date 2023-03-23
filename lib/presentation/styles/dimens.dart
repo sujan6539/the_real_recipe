@@ -1,0 +1,15 @@
+import 'package:flutter/cupertino.dart';
+
+@immutable
+class Dimens {
+  final double _scale;
+
+  Dimens(this._scale);
+
+  late final double dimens_4 = 4 * _scale;
+  late final double dimens_8 = 8 * _scale;
+  late final double dimens_12 = 12 * _scale;
+  late final double dimens_16 = 16 * _scale;
+  late final double dimens_20 = 20 * _scale;
+  late final double dimens_24 = 24 * _scale;
+}
