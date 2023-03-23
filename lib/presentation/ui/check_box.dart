@@ -29,9 +29,9 @@ class _CheckBoxState extends State<CheckBox> {
           activeColor: widget.activeColor,
           fillColor: MaterialStateProperty.resolveWith<Color>((states) {
             if (states.contains(MaterialState.selected)) {
-              return AppColors.primaryColor;
+              return AppColors.primaryColor100;
             }
-            return AppColors.secondaryColor;
+            return AppColors.secondaryColor100;
           }),
           shape: RoundedRectangleBorder(
               borderRadius:
@@ -39,7 +39,7 @@ class _CheckBoxState extends State<CheckBox> {
         ),
         Text(
           "Accept terms & condition",
-          style: TextStyle(color: AppColors.secondaryColor),
+          style: TextStyle(color: AppColors.secondaryColor100),
         )
       ],
     );

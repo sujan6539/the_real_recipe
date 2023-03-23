@@ -25,7 +25,7 @@ class SignUpPage extends StatelessWidget {
           EditText(label: "Email", hint: "Enter Email"),
           EditText(label: "Password", hint: "Enter Password"),
           EditText(label: "Confirm Password", hint: "Retype Password"),
-          CheckBox(activeColor: AppColors.secondaryColor),
+          CheckBox(activeColor: AppColors.secondaryColor100),
           ElevatedButton(onPressed: () {}, child: Text("Sign Up")),
           Padding(
             padding: EdgeInsets.all(MyApp.$style.dimens.dimens_12),

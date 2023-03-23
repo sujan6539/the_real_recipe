@@ -4,21 +4,33 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AppColors {
-  static Color primaryColor = const Color(0xFF129575);
-  static Color backgroundColor = Colors.white;
+  static Color primaryColor100 = const Color(0xFF129575);
+  static Color primaryColor80 = const Color(0xFF71B1A1);
+  static Color primaryColor60 = const Color(0xFFAFD3CA);
+  static Color primaryColor40 = const Color(0xFFDBEBE7);
+  static Color primaryColor20 = const Color(0xFFF6FAF9);
+  static Color backgroundColor = const Color(0xFFDBEBE7);
   static Color onPrimaryColor = Colors.white;
-  static Color secondaryColor = const Color(0xFFFF9C00);
+  static Color secondaryColor100 = const Color(0xFFFF9C00);
+  static Color secondaryColor80 = const Color(0xFFFFA61A);
+  static Color secondaryColor60 = const Color(0xFFFFBA4D);
+  static Color secondaryColor40 = const Color(0xFFFFCE80);
+  static Color secondaryColor20 = const Color(0xFFFFE1B3);
+  static Color ratingColor = const Color(0xFFFFAD30);
+  static Color heroCardColor = const Color(0xFFD9D9D9);
   static Color onSecondaryColor = Colors.black;
-  static Color error = const Color(0xFFFD3654);
+  static Color errorColor = const Color(0xFFD50202);
+  static Color warningColor = const Color(0xFF995E00);
+  static Color successColor = const Color(0xFF31B057);
 
   ThemeData toThemeData(BuildContext context) {
     var colorScheme = ColorScheme(
         brightness: Brightness.light,
-        primary: primaryColor,
+        primary: primaryColor100,
         onPrimary: onPrimaryColor,
-        secondary: secondaryColor,
+        secondary: secondaryColor100,
         onSecondary: onSecondaryColor,
-        error: error,
+        error: errorColor,
         onError: onSecondaryColor,
         background: backgroundColor,
         onBackground: onSecondaryColor,
