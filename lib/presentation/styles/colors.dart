@@ -37,6 +37,7 @@ class AppColors {
         surface: Colors.white54,
         onSurface: Colors.black26);
     return ThemeData.from(
+        useMaterial3: true,
         colorScheme: colorScheme,
         textTheme:
             GoogleFonts.poppinsTextTheme(Theme.of(context).textTheme.copyWith(

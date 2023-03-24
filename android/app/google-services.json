@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "916714986492",
+    "project_id": "the-real-recipe",
+    "storage_bucket": "the-real-recipe.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:916714986492:android:3ed9f82e16c722a0ad3079",
+        "android_client_info": {
+          "package_name": "com.tsuzan.the_real_recipe"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "916714986492-b9ho2f1peoui2gr7qc671f3oep6gmg04.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDp_y_LhS4jg3-sVY7yj7_crvhRQZ_67fo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "916714986492-b9ho2f1peoui2gr7qc671f3oep6gmg04.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
