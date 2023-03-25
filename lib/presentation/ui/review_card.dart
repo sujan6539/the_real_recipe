@@ -11,7 +11,7 @@ class ReviewCard extends StatelessWidget {
     var screenSize = MediaQuery.of(context).size;
     return SizedBox(
       width: screenSize.width * 0.8,
-      height: screenSize.height * 0.1,
+      height: double.minPositive,
       child: Stack(
         children: [
           Card(

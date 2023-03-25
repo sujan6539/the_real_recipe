@@ -10,7 +10,7 @@ class HeroCard extends StatelessWidget {
     var screenSize = MediaQuery.of(context).size;
     return Container(
       width: 0.46 * screenSize.width,
-      height: 0.4 * screenSize.height,
+      height: double.minPositive,
       child: Stack(
         alignment: Alignment.topCenter,
         children: [

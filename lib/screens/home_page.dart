@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:the_real_recipe/main.dart';
 import 'package:the_real_recipe/presentation/ui/hero_card.dart';
 import 'package:the_real_recipe/presentation/ui/rating_widget.dart';
+import 'package:the_real_recipe/presentation/ui/recipe_origin.dart';
 import 'package:the_real_recipe/presentation/ui/review_card.dart';
 
 import '../presentation/ui/home_greeting.dart';
@@ -15,11 +16,13 @@ class HomePage extends StatelessWidget {
       padding: EdgeInsets.all(MyApp.$style.dimens.dimens_16),
       child: Column(
         mainAxisSize: MainAxisSize.max,
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
           const HomeGreeting(),
           Padding(padding: EdgeInsets.all(16.0),),
-          Flexible(
+          SizedBox(height: 40, child: RecipeOrigin()),
+          Padding(padding: EdgeInsets.all(16.0),),
+          Expanded(
             child: ListView.builder(
               itemBuilder: (buildContext, index) {
                 return HeroCard();
@@ -29,7 +32,7 @@ class HomePage extends StatelessWidget {
               shrinkWrap: true,
             ),
           ),
-          Expanded(child: ListView.builder(
+          Flexible(child: ListView.builder(
             itemBuilder: (buildContext, index) {
               return Padding(
                 padding: const EdgeInsets.all(8.0),
