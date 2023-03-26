@@ -12,27 +12,28 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.all(MyApp.$style.dimens.dimens_16),
-      child: Column(
-        mainAxisSize: MainAxisSize.max,
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          const HomeGreeting(),
-          Padding(padding: EdgeInsets.all(16.0),),
-          SizedBox(height: 40, child: RecipeOrigin()),
-          Padding(padding: EdgeInsets.all(16.0),),
-          Expanded(
-            child: ListView.builder(
-              itemBuilder: (buildContext, index) {
-                return HeroCard();
-              },
-              itemCount: 3,
-              scrollDirection: Axis.horizontal,
-              shrinkWrap: true,
-            ),
+    return ListView(
+      scrollDirection: Axis.vertical,
+      shrinkWrap: true,
+      children: [
+        const HomeGreeting(),
+        Padding(padding: EdgeInsets.all(16.0),),
+        SizedBox(height: 40, child: RecipeOrigin()),
+        Padding(padding: EdgeInsets.all(16.0),),
+        SizedBox(
+          height:320,
+          child: ListView.builder(
+            itemBuilder: (buildContext, index) {
+              return const Expanded(child: HeroCard());
+            },
+            itemCount: 3,
+            scrollDirection: Axis.horizontal,
+            shrinkWrap: true,
           ),
-          Flexible(child: ListView.builder(
+        ),
+        SizedBox(
+          height:300, // Todo fix this.
+          child: ListView.builder(
             itemBuilder: (buildContext, index) {
               return Padding(
                 padding: const EdgeInsets.all(8.0),
@@ -41,10 +42,9 @@ class HomePage extends StatelessWidget {
             },
             shrinkWrap: true,
             itemCount: 3,
-            scrollDirection: Axis.horizontal,)
-          ),
-        ],
-      ),
+            scrollDirection: Axis.horizontal,),
+        ),
+      ],
     );
   }
 }
