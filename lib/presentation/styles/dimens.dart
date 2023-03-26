@@ -16,4 +16,5 @@ class Dimens {
   late final double hero_card_image_size = 110 * _scale;
   late final double review_card_image_size = 86 * _scale;
   late final double origin_height = 31 * _scale;
+  late final double profile_image_size = 50 * _scale;
 }

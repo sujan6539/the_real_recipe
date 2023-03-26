@@ -18,7 +18,14 @@ class HomePage extends StatelessWidget {
       children: [
         const HomeGreeting(),
         Padding(padding: EdgeInsets.all(16.0),),
-        SizedBox(height: 40, child: RecipeOrigin()),
+        SizedBox(height: 40, child: RecipeOrigin(origin:  [
+          'All',
+          'Nepali',
+          'Indian',
+          'Italian',
+          'Asian',
+          'Chinese'
+        ],)),
         Padding(padding: EdgeInsets.all(16.0),),
         SizedBox(
           height:320,
