@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:the_real_recipe/main.dart';
 import 'package:the_real_recipe/presentation/ui/edit_text.dart';
 
-class SignInPage extends StatelessWidget {
+import '../domain/firebase/login_state.dart';
+
+final loginProvider = StateNotifierProvider((ref) => LoginStateNotifier());
+
+class SignInPage extends ConsumerWidget {
   const SignInPage({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Padding(
       padding: EdgeInsets.all(MyApp.$style.dimens.dimens_20),
       child: Column(
@@ -42,7 +47,10 @@ class SignInPage extends StatelessWidget {
             ),
           ),
           ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              ref.read(loginProvider.notifier).login("test1@getnada.com", "Hello123\$");
+
+            },
             style: ButtonStyle(
               shape: MaterialStateProperty.all(RoundedRectangleBorder(
                   borderRadius:

@@ -1,12 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:the_real_recipe/presentation/styles/colors.dart';
 import 'package:the_real_recipe/presentation/styles/styles.dart';
 import 'package:the_real_recipe/screens/home_page.dart';
 import 'package:the_real_recipe/screens/profile_page.dart';
+import 'package:the_real_recipe/screens/sign_in_page.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() {
+
+import 'domain/firebase/auth.dart';
+
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  runApp(const MyApp());
+  await Firebase.initializeApp();
+  runApp(ProviderScope(child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -22,7 +29,17 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: AppColors().toThemeData(context),
-      home: SafeArea(child: Scaffold(body: ProfilePage())),
+      home: SafeArea(
+          child: Scaffold(
+              body: StreamBuilder(
+                  stream: Auth().authStateChanges,
+                  builder: (context, snapshot) {
+                    if (snapshot.hasData) {
+                      return HomePage();
+                    } else {
+                      return SignInPage();
+                    }
+                  }))),
     );
   }
 }
