@@ -1,9 +1,35 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:the_real_recipe/main.dart';
 import 'package:the_real_recipe/presentation/styles/colors.dart';
 
-class HeroCard extends StatelessWidget {
+class HeroCard extends StatefulWidget {
   const HeroCard({Key? key}) : super(key: key);
+
+  @override
+  State<HeroCard> createState() => _HeroCardState();
+}
+
+class _HeroCardState extends State<HeroCard>
+    with SingleTickerProviderStateMixin {
+  late AnimationController _animationController;
+  late Animation _animation;
+  late double angle;
+
+  @override
+  void initState() {
+    super.initState();
+    _animationController = AnimationController(
+        vsync: this, duration: const Duration(milliseconds: 500));
+    angle =  pi;
+  }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +63,8 @@ class HeroCard extends StatelessWidget {
                     Align(
                         alignment: Alignment.center,
                         child: Padding(
-                          padding: const EdgeInsets.fromLTRB(8.0, 0.0, 8.0, 16.0),
+                          padding:
+                              const EdgeInsets.fromLTRB(8.0, 0.0, 8.0, 16.0),
                           child: Text(
                             "Classic Greek Salad",
                             textAlign: TextAlign.center,
@@ -55,10 +82,30 @@ class HeroCard extends StatelessWidget {
             ),
           ),
         ),
-        Image.asset(
-          "assets/images/salad.png",
-          width: MyApp.$style.dimens.hero_card_image_size,
-          height: MyApp.$style.dimens.hero_card_image_size,
+        GestureDetector(
+          onTapDown: (details) {
+            setState(() {
+              angle = pi/4;
+            });
+          },
+          onTapCancel: () {
+            setState(() {
+              angle = pi/4;
+            });
+          },
+          child: AnimatedBuilder(
+            animation: _animationController,
+            builder: (context, child) {
+              return Transform.rotate(
+                angle: angle,
+                child: Image.asset(
+                  "assets/images/salad.png",
+                  width: MyApp.$style.dimens.hero_card_image_size,
+                  height: MyApp.$style.dimens.hero_card_image_size,
+                ),
+              );
+            },
+          ),
         ),
         Positioned(
           right: MyApp.$style.dimens.dimens_8,

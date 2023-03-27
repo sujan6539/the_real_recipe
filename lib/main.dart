@@ -4,6 +4,7 @@ import 'package:the_real_recipe/presentation/styles/colors.dart';
 import 'package:the_real_recipe/presentation/styles/styles.dart';
 import 'package:the_real_recipe/screens/home_page.dart';
 import 'package:the_real_recipe/screens/profile_page.dart';
+import 'package:the_real_recipe/screens/search_page.dart';
 import 'package:the_real_recipe/screens/sign_in_page.dart';
 import 'package:firebase_core/firebase_core.dart';
 
@@ -35,7 +36,7 @@ class MyApp extends StatelessWidget {
                   stream: Auth().authStateChanges,
                   builder: (context, snapshot) {
                     if (snapshot.hasData) {
-                      return HomePage();
+                      return SearchPage();
                     } else {
                       return SignInPage();
                     }
