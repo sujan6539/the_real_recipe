@@ -11,23 +11,38 @@ class HeroCard extends StatefulWidget {
   State<HeroCard> createState() => _HeroCardState();
 }
 
-class _HeroCardState extends State<HeroCard>
-    with SingleTickerProviderStateMixin {
+class _HeroCardState extends State<HeroCard> with TickerProviderStateMixin {
   late AnimationController _animationController;
+  late AnimationController _sizeAnimationController;
   late Animation _animation;
-  late double angle;
+  late Animation _sizeAnimation;
+  late double startAngle;
+  late double endAngle;
 
   @override
   void initState() {
     super.initState();
-    _animationController = AnimationController(
-        vsync: this, duration: const Duration(milliseconds: 500));
-    angle =  pi;
+    _animationController =
+        AnimationController(vsync: this, duration: const Duration(seconds: 2));
+    startAngle = 0;
+    endAngle = pi / 2;
+    _animation = Tween<double>(
+      begin: startAngle,
+      end: endAngle,
+    ).animate(_animationController);
+    _animationController.forward();
+
+    _sizeAnimationController =
+        AnimationController(vsync: this, duration: const Duration(seconds: 1));
+    _sizeAnimation =
+        (Tween<double>(begin: 0, end: 1).animate(_sizeAnimationController));
+    _sizeAnimationController.forward();
   }
 
   @override
   void dispose() {
-    // TODO: implement dispose
+    _animationController.dispose();
+    _sizeAnimationController.dispose();
     super.dispose();
   }
 
@@ -83,25 +98,33 @@ class _HeroCardState extends State<HeroCard>
           ),
         ),
         GestureDetector(
-          onTapDown: (details) {
-            setState(() {
-              angle = pi/4;
-            });
+          onTap: () {
+            startAngle += pi / 2;
+            endAngle += pi / 2;
+            _animationController.reset();
+            _animation = Tween<double>(begin: startAngle, end: endAngle)
+                .animate(CurvedAnimation(
+                    parent: _animationController, curve: Curves.easeIn));
+            _animationController.forward();
           },
-          onTapCancel: () {
-            setState(() {
-              angle = pi/4;
-            });
+          onTapUp: (details) {
+            _animationController.stop();
           },
           child: AnimatedBuilder(
-            animation: _animationController,
+            animation: Listenable.merge([
+              _animationController,
+              _sizeAnimationController,
+            ]),
             builder: (context, child) {
               return Transform.rotate(
-                angle: angle,
-                child: Image.asset(
-                  "assets/images/salad.png",
-                  width: MyApp.$style.dimens.hero_card_image_size,
-                  height: MyApp.$style.dimens.hero_card_image_size,
+                angle: _animation.value,
+                child: Transform.scale(
+                  scale: _sizeAnimation.value,
+                  child: Image.asset(
+                    "assets/images/salad.png",
+                    width: MyApp.$style.dimens.hero_card_image_size,
+                    height: MyApp.$style.dimens.hero_card_image_size,
+                  ),
                 ),
               );
             },

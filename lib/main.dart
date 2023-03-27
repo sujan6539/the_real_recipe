@@ -36,7 +36,7 @@ class MyApp extends StatelessWidget {
                   stream: Auth().authStateChanges,
                   builder: (context, snapshot) {
                     if (snapshot.hasData) {
-                      return SearchPage();
+                      return HomePage();
                     } else {
                       return SignInPage();
                     }

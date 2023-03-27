@@ -31,7 +31,7 @@ class HomePage extends StatelessWidget {
           height:320,
           child: ListView.builder(
             itemBuilder: (buildContext, index) {
-              return const Expanded(child: HeroCard());
+              return HeroCard();
             },
             itemCount: 3,
             scrollDirection: Axis.horizontal,
