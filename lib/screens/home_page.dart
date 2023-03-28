@@ -12,11 +12,12 @@ import 'package:the_real_recipe/presentation/ui/review_card.dart';
 
 import '../presentation/ui/home_greeting.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends ConsumerWidget {
   const HomePage({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    ref.read(recipeProvider.notifier).fetchRecipe();
     return ListView(
       scrollDirection: Axis.vertical,
       shrinkWrap: true,
