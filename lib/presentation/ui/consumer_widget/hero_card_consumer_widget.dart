@@ -30,8 +30,8 @@ class HeroCardConsumerWidget extends ConsumerWidget {
     return ListView.builder(
       itemBuilder: (buildContext, index) {
         return HeroCard(
-          title: results?[index].name ?? "",
-          time: results?[index].cookTimeMinutes?.toString() ?? '',
+          title: results?[index].name ?? "Salad",
+          time: results?[index].cookTimeMinutes?.toString() ?? '3 min',
         );
       },
       itemCount: item,
