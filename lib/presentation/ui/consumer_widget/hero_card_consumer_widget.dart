@@ -7,25 +7,34 @@ import 'package:the_real_recipe/presentation/ui/hero_card.dart';
 import '../../../data/network/recipe_repository.dart';
 import '../../../domain/network/recipe_repository_impl.dart';
 import '../../../domain/network/recipe_service.dart';
+import '../../../domain/state/providers.dart';
 import '../../../domain/state/recipe_notifier.dart';
 
-final serviceProvider = Provider((ref) => RecipeService.create());
-
-final recipeRepositoryProvider = Provider<RecipeRepository>((ref) {
-  return RecipeRepositoryImpl(ref.watch(serviceProvider));
-});
-
-final recipeProvider =
-    StateNotifierProvider<RecipeNotifier, RecipeResponse?>((ref) {
-  return RecipeNotifier(recipeRepository: ref.watch(recipeRepositoryProvider));
-});
-
-class HeroCardConsumerWidget extends ConsumerWidget {
+class HeroCardConsumerWidget extends ConsumerStatefulWidget {
   const HeroCardConsumerWidget({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context, WidgetRef widgetRef) {
-    var results = widgetRef.watch(recipeProvider.notifier).state?.results;
+  ConsumerState<HeroCardConsumerWidget> createState() =>
+      _HeroCardConsumerWidgetState();
+}
+
+class _HeroCardConsumerWidgetState
+    extends ConsumerState<HeroCardConsumerWidget> {
+  var results;
+
+  @override
+  void initState() {
+    super.initState();
+    // ref.read(recipeProvider.notifier);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    ref.listen(recipeProvider, (previous, next) {
+      setState(() {
+        results = next?.results;
+      });
+    });
     var item = 6;
     return ListView.builder(
       itemBuilder: (buildContext, index) {

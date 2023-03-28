@@ -7,11 +7,12 @@ import '../../data/network/recipe_repository.dart';
 class RecipeNotifier extends StateNotifier<RecipeResponse?> {
   final RecipeRepository recipeRepository;
 
-  RecipeNotifier({required this.recipeRepository}) : super(null);
+  RecipeNotifier({required this.recipeRepository}) : super(RecipeResponse());
 
   Future<void> fetchRecipe() async {
     await recipeRepository.fetchRecipe().then((value) {
-      state = RecipeResponse.fromJson(value.body);
+      var recipeResponse = RecipeResponse.fromJson(value.body);
+      state = recipeResponse;
       debugPrint(state.toString());
     }, onError: (error) {
       debugPrint(error);

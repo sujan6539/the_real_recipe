@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:the_real_recipe/main.dart';
 import 'package:the_real_recipe/screens/profile_page.dart';
 
+import '../../domain/state/providers.dart';
 import '../styles/colors.dart';
 import 'consumer_widget/hero_card_consumer_widget.dart';
 

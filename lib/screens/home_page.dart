@@ -10,6 +10,7 @@ import 'package:the_real_recipe/presentation/ui/rating_widget.dart';
 import 'package:the_real_recipe/presentation/ui/recipe_origin.dart';
 import 'package:the_real_recipe/presentation/ui/review_card.dart';
 
+import '../domain/state/providers.dart';
 import '../presentation/ui/home_greeting.dart';
 
 class HomePage extends ConsumerWidget {
@@ -41,10 +42,7 @@ class HomePage extends ConsumerWidget {
         Padding(
           padding: EdgeInsets.all(16.0),
         ),
-        SizedBox(
-          height: 320,
-          child: HeroCardConsumerWidget()
-        ),
+        SizedBox(height: 320, child: HeroCardConsumerWidget()),
         SizedBox(
           height: 300, // Todo fix this.
           child: ListView.builder(
