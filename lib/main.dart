@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:the_real_recipe/presentation/styles/colors.dart';
 import 'package:the_real_recipe/presentation/styles/styles.dart';
+import 'package:the_real_recipe/screens/detail_page.dart';
 import 'package:the_real_recipe/screens/home_page.dart';
 import 'package:the_real_recipe/screens/profile_page.dart';
 import 'package:the_real_recipe/screens/search_page.dart';
@@ -36,7 +37,7 @@ class MyApp extends StatelessWidget {
                   stream: Auth().authStateChanges,
                   builder: (context, snapshot) {
                     if (snapshot.hasData) {
-                      return HomePage();
+                      return DetailPage();
                     } else {
                       return SignInPage();
                     }
